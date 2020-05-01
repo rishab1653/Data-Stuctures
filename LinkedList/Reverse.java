@@ -103,8 +103,8 @@ public class Reverse {
      public static void main(String[] args)
     {
         Node head = takeInputTail();
-        Node head1 = reverseList(head);
-        print(head1);
+        // Node head1 = reverseList(head);
+        // print(head1);
         Node head2 = reverseRecursion(head);
         print(head2);
         

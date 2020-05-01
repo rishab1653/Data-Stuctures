@@ -78,11 +78,35 @@ public class MiddleElement {
         return slow;
     }
 
+    public static Node insertAtAnyPosition(Node head , int pos , int value)
+    {
+        Node newNode = new Node(value);
+        int i = 0;
+        Node temp = head;
+        
+       if(pos == 0)
+       {
+           newNode.next = head;
+           return newNode;
+       }
+       while(i<pos-1)
+       {
+            temp= temp.next;
+            i++;
+       }
+       newNode.next= temp.next;
+       temp.next= newNode;
+       return head;
+    }
     public static void main(String[] args)
     {
         Node head = takeInputTail();
         Node head1 = findMiddle(head);
-        System.out.println(head1.data);
+        System.out.println("The value of Middle Element is " +head1.data);
+        print(head);
+        System.out.println();
+        Node head2 = insertAtAnyPosition(head, 4, 5);
+        print(head2);
 
     }
 
